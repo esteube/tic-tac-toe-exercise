@@ -2,14 +2,7 @@ window.onload = start;
 var boxes = document.getElementsByClassName("tile");
 var turnText = document.querySelector(".playerTurn");
 var winnerText = document.querySelector(".winnerText");
-var counter = 1;
-var winCounter = 0;
-var OMoves = [];
-var XMoves = [];
-
-// document.getElementById("foosauce").addEventListener("click",function(){
-//   this.innerText = "dope";
-// });
+var OMoves, XMoves, winCounter, counter;
 
 var winningCombinations = [[0,1,2],[3,4,5],[6,7,8],
 [0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
@@ -17,6 +10,10 @@ var winningCombinations = [[0,1,2],[3,4,5],[6,7,8],
 function start(){
   addXandOListener();
   addResetListener();
+  OMoves = [];
+  XMoves = [];
+  winCounter=0;
+  counter = 1;
 }
 
 function removeListeners(){
@@ -90,9 +87,6 @@ function resetBoard(){
     boxes[i].innerText="";
     boxes[i].setAttribute("class","tile");
   }
-  OMoves = [];
-  XMoves = [];
-  winCounter=0;
-  counter = 1;
   turnText.innerText = "It is X's turn";
+  start();
 }
