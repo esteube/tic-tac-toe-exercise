@@ -4,7 +4,7 @@ require('mocha-generators').install();
 
 describe("TTT tests", function(){
     var nightmare;
-    var url = 'http://localhost:3000';
+    var url = 'http://localhost:8080';
 
     beforeEach(function() {
       nightmare = Nightmare({
