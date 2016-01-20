@@ -1,5 +1,5 @@
 window.onload = start;
-var boxes = document.getElementsByTagName("td");
+var boxes = document.getElementsByClassName("tile");
 var turnText = document.querySelector(".playerTurn");
 var winnerText = document.querySelector(".winnerText");
 var counter = 1;
@@ -36,7 +36,7 @@ function addXorO(event){
     if (counter % 2 === 0) {
       OMoves.push(parseInt(event.target.getAttribute("id").replace(/[^0-9]/g,'')));
       event.target.innerText = "O";
-      event.target.setAttribute("class","O");
+      event.target.classList.add("O");
       turnText.innerText = "It is X's turn";
       counter++;
       checkForWin(OMoves, "O");
@@ -44,7 +44,7 @@ function addXorO(event){
     else {
       XMoves.push(parseInt(event.target.getAttribute("id").replace(/[^0-9]/g,'')));
       event.target.innerText = "X";
-      event.target.setAttribute("class","X");
+      event.target.classList.add("X");
       turnText.innerText = "It is O's turn";
       counter++;
       checkForWin(XMoves, "X");
@@ -88,12 +88,11 @@ function checkForWin(movesArray, name){
 function resetBoard(){
   for (var i = boxes.length - 1; i >= 0; i--) {
     boxes[i].innerText="";
-    boxes[i].setAttribute("class","clear");
+    boxes[i].setAttribute("class","tile");
   }
   OMoves = [];
   XMoves = [];
   winCounter=0;
   counter = 1;
-  turnText.innerText = "";
   turnText.innerText = "It is X's turn";
 }
