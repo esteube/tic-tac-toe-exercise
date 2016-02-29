@@ -47,7 +47,7 @@ function addXorO(event){
       checkForWin(XMoves, "X");
     }
   // if the counter is greater than or equal to 10, the game is a draw!
-  if (counter >= 10){
+  if (counter >= 10 && winCounter !== 3){
     turnText.innerText = "Game Over!";
     var conf = confirm("It's a draw, do you want to play again?");
     if(conf){
@@ -70,13 +70,14 @@ function checkForWin(movesArray, name){
     // loop over each individual array
     for (var j = 0; j < winningCombinations[i].length; j++) {
       // if the number in winning combo array is === a number in moves array, add to winCounter
-      if(movesArray.indexOf(winningCombinations[i][j]) !== -1){
-        winCounter++;
-      }
+        if(movesArray.indexOf(winningCombinations[i][j]) !== -1){
+          winCounter++;
+        }
       // if winCounter === 3 that means all 3 moves are winning combos and game is over!
       if(winCounter === 3){
         turnText.innerText = `Game over, ${name} wins!`;
         removeListeners();
+        return winCounter;
       }
     }
   }
