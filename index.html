@@ -3,25 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h2 class="playerTurn"></h2>
   <div>
-    <div>
-        <div id="cell0"></div>
-        <div id="cell1"></div>
-        <div id="cell2"></div>
-    </div>
-      <div>
-        <div id="cell3"></div>
-        <div id="cell4"></div>
-        <div id="cell5"></div>
-      </div>
-      <div>
-        <div id="cell6"></div>
-        <div id="cell7"></div>
-        <div id="cell8"></div>
-      </div>
+    <table class="center">
+      <tr>
+        <td class="gameSquare" id="box1"></td>
+        <td class="gameSquare" id="box2"></td>
+        <td class="gameSquare" id="box3"></td>
+      </tr>
+
+      <tr>
+        <td class="gameSquare" id="box4"></td>
+        <td class="gameSquare" id="box5"></td>
+        <td class="gameSquare" id="box6"></td>
+      </tr>
+      <tr>
+        <td class="gameSquare" id="box7"></td>
+        <td class="gameSquare" id="box8"></td>
+        <td class="gameSquare" id="box9"></td>
+      </tr>
+    </table>
+      <button id="resetGame" type="button" name="button">RESET</button>
   </div>
 </body>
 </html>
